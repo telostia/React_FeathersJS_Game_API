@@ -16,25 +16,25 @@ exports.before = {
   all: [
     auth.verifyToken(),
     auth.populateUser(),
-    auth.restrictToAuthenticated()
+    auth.restrictToAuthenticated(),
   ],
   find: [],
   get: [],
   create: [createGame()],
   update: [joinGame()],
   patch: [joinGame()],
-  remove: []
+  remove: [],
 };
 
 exports.after = {
   all: [hooks.populate('players', {
     service: 'users',
-    field: 'playerIds'
-  }), isGameFull(), firstEncounter()],
+    field: 'playerIds',
+  }), isGameFull(), firstEncounter(),],
   find: [],
   get: [],
   create: [],
   update: [],
   patch: [],
-  remove: []
+  remove: [],
 };
