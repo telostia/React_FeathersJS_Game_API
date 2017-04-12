@@ -1,5 +1,7 @@
 'use strict';
 
+// src/services/game/game-model.js
+
 // game-model.js - A mongoose model
 //
 // See http://mongoosejs.com/docs/models.html
@@ -11,8 +13,10 @@ const Schema = mongoose.Schema;
 const gameSchema = new Schema({
   title: { type: String, required: true },
   playerIds: [Schema.Types.ObjectId],
-  createdAt: { type: Date, 'default': Date.now },
-  updatedAt: { type: Date, 'default': Date.now }
+  playerPickOne: { type: String, default: ''},
+  playerPickTwo: { type: String, default: '' },
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
 });
 
 const gameModel = mongoose.model('game', gameSchema);
