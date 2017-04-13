@@ -1,36 +1,18 @@
-import React, { PureComponent } from 'react'
+const playerChoices = ['paper', 'rock', 'lizard', 'spock', 'scissors'];
+const result = [' ties with ', ' beats ', ' loses to '];
 
-class GameLogic extends PureComponent {
+const bigBang = function(playerPickOne, playerPickTwo) {
 
-  bigBang(playerPickOne, playerPickTwo) {
-    const playerChoices = ['paper', 'rock', 'lizard', 'spock', 'scissors'];
-    const result = [' ties with ', ' beats ', ' loses to '];
-
-    let choice1 = playerChoices.indexOf(playerPickOne),
-    choice2 = playerChoices.indexOf(playerPickTwo),
-    difference = choice2 - choice1;
-    if (difference < 0) {
-      difference += playerChoices.length;
-    }
-    while (difference > 2) {
-      difference -= 2;
-    }
-    return playerPickOne + result[difference] + playerPickTwo;
+  let choice1 = playerChoices.indexOf(playerPickOne),
+  choice2 = playerChoices.indexOf(playerPickTwo),
+  difference = choice2 - choice1;
+  if (difference < 0) {
+    difference += playerChoices.length;
   }
-
-  render() {
-    return (
-      <div>
-        <div>{ this.bigBang('spock', 'scissors') }</div>
-        <div>{ this.bigBang('spock', 'paper') }</div>
-        <div>{ this.bigBang('spock', 'rock') }</div>
-        <div>{ this.bigBang('spock', 'lizard') }</div>
-        <div>{ this.bigBang('spock', 'spock') }</div>
-      </div>
-    )
+  while (difference > 2) {
+    difference -= 2;
   }
+  return playerPickOne + result[difference] + playerPickTwo;
 }
 
-
-
-export default GameLogic
+console.log(bigBang('spock', 'scissors'));
