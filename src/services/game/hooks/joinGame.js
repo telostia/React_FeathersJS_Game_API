@@ -12,6 +12,7 @@ module.exports = function(options) {
   return function(hook) {
     return hook.app.service('games').get(hook.id)
       .then((game) => {
+        if (game.playerIds.length > 1) return
         if (hook.data.joinGame === undefined) {
           throw new errors.Forbidden('You must be the author to change a game like that.');
         }
