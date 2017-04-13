@@ -23,6 +23,7 @@ exports.before = {
   find: [],
   get: [],
   create: [createGame()],
+
   update: [
     joinGame(),
     // playerPick(),
