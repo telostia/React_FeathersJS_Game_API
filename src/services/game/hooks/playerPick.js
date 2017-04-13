@@ -12,9 +12,9 @@
 //     .then((game) => {
 //       // checks if player is player 1 or 2 and stores pick in db
 //       if (hook.params.user._id === game.playerIds[0]) {
-//         hook.data.playerPickOne = hook.params.playerPick
+//         playerPickOne = hook.params.playerPick
 //       } else {
-//         hook.data.playerPickTwo = hook.params.playerPick
+//         playerPickTwo = hook.params.playerPick
 //       }
 //     }
 //   };
