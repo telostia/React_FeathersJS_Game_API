@@ -20,7 +20,7 @@ module.exports = function(options) {
         return Object.assign({}, game, { full })
       });
     } else {
-      result.full = isGameFull(result)
+      result.full = isGameFull(result);
     }
   };
 };
