@@ -24,10 +24,10 @@ exports.before = {
   get: [],
   create: [createGame()],
   update: [joinGame(),
-    // playerPick()
+    // playerPick(),
   ],
   patch: [joinGame(),
-    // playerPick()
+    // playerPick(),
   ],
   remove: [],
 };
