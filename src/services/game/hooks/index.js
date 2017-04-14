@@ -28,12 +28,10 @@ exports.before = {
 
   update: [
     joinGame(),
-    pickOutcome(),
   ],
   patch: [
     joinGame(),
     playerPick(),
-    pickOutcome(),
   ],
   remove: [],
 };
@@ -46,7 +44,11 @@ exports.after = {
   find: [],
   get: [],
   create: [],
-  update: [],
-  patch: [],
+  update: [
+    pickOutcome(),
+  ],
+  patch: [
+    pickOutcome(),
+  ],
   remove: [],
 };
