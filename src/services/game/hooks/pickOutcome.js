@@ -18,7 +18,8 @@ const bazinga = function(playerPickOne, playerPickTwo) {
       difference -= 2;
     }
     console.log(playerPickOne + result[difference] + playerPickTwo);
-    return playerPickOne + result[difference] + playerPickTwo;
+    const outcome = playerPickOne + result[difference] + playerPickTwo;
+    return
   }
 
 module.exports = function(options) {
@@ -31,7 +32,8 @@ module.exports = function(options) {
       if (game.playerPickOne == '' || game.playerPickTwo == '') return
 
       if (game.playerPickOne != '' && game.playerPickTwo != '') {
-        bazinga(playerPickOne, playerPickTwo)
+        bazinga(playerPickOne, playerPickTwo);
+        game.outcome = outcome
 
       }
     })
