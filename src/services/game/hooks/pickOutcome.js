@@ -5,29 +5,35 @@
 // Use this hook to manipulate incoming or outgoing data.
 // For more information on hooks see: http://docs.feathersjs.com/hooks/readme.html
 
-const gameLogic = require('../gameLogic')
-const defaults = {};
-console.log('hello from pickOutcome');
-
-
+const playerChoices = ['paper', 'rock', 'lizard', 'spock', 'scissors'];
+const result = [' ties with ', ' beats ', ' loses to '];
+const bazinga = function(playerPickOne, playerPickTwo) {
+    let choice1 = playerChoices.indexOf(playerPickOne),
+        choice2 = playerChoices.indexOf(playerPickTwo),
+        difference = choice2 - choice1;
+    if (difference < 0) {
+      difference += playerChoices.length;
+    }
+    while (difference > 2) {
+      difference -= 2;
+    }
+    console.log(playerPickOne + result[difference] + playerPickTwo);
+    return playerPickOne + result[difference] + playerPickTwo;
+  }
 
 module.exports = function(options) {
   return function(hook) {
     return hook.app.service('games').get(hook.id)
-
     .then((game) => {
-      console.log('only one player picked ' + (game.playerPickOne == '' || game.playerPickTwo == ''));
+      let playerPickOne = game.playerPickOne,
+      playerPickTwo = game.playerPickTwo;
 
       if (game.playerPickOne == '' || game.playerPickTwo == '') return
 
-
       if (game.playerPickOne != '' && game.playerPickTwo != '') {
-        gameLogic(game.playerPickOne, game.playerPickTwo)
+        bazinga(playerPickOne, playerPickTwo)
 
-        // console.log('p2 pick ' + game.playerPickTwo);
-        // console.log('p1 pick ' + game.playerPickOne);
       }
-
     })
   }
 };
