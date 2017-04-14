@@ -1,5 +1,7 @@
 'use strict';
 
+const pickOutcome = require('./pickOutcome');
+
 const playerPick = require('./playerPick');
 
 const firstEncounter = require('./firstEncounter');
@@ -43,7 +45,7 @@ exports.after = {
   find: [],
   get: [],
   create: [],
-  update: [],
-  patch: [],
+  update: [pickOutcome()],
+  patch: [pickOutcome()],
   remove: [],
 };
