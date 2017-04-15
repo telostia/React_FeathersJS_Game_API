@@ -17,7 +17,7 @@ const bazinga = function(playerPickOne, playerPickTwo) {
     while (difference > 2) {
       difference -= 2;
     }
-    console.log(playerPickOne + result[difference] + playerPickTwo);
+    console.log('\n ********** ' + (playerPickOne + result[difference] + playerPickTwo) + ' **********');
     return playerPickOne + result[difference] + playerPickTwo;
   }
 
