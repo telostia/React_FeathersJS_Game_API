@@ -17,6 +17,6 @@ module.exports = function(options) {
 
     hook.data.playerIds = [hook.params.user._id];
 
-    hook.data.outcome = 'Default value'
+    hook.data.outcome = 'The result will be shown as soon as your opponent picks!'
   };
 };

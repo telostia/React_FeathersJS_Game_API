@@ -39,10 +39,8 @@ exports.after = {
   get: [],
   create: [],
   update: [
-    pickOutcome(),
   ],
   patch: [
-    pickOutcome(),
   ],
   remove: [],
 };
