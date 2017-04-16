@@ -1,6 +1,6 @@
 'use strict';
 
-// src/services/game/hooks/pickOutcome.js
+// src/services/game/hooks/thisOutcome.js
 //
 // Use this hook to manipulate incoming or outgoing data.
 // For more information on hooks see: http://docs.feathersjs.com/hooks/readme.html
@@ -21,27 +21,18 @@ const bazinga = function(playerPickOne, playerPickTwo) {
     return playerPickOne + result[difference] + playerPickTwo;
   }
 
-
 module.exports = function(options) {
   return function(hook) {
     return hook.app.service('games').get(hook.id)
     .then((game) => {
-
-
-
       let playerPickOne = game.playerPickOne,
       playerPickTwo = game.playerPickTwo;
-
-      // const newOutcome = bazinga(playerPickOne, playerPickTwo)
-      // console.log(bazinga(playerPickOne, playerPickTwo));
 
       if (game.playerPickOne == '' || game.playerPickTwo == '') return
 
       if (game.playerPickOne != '' && game.playerPickTwo != '') {
-        // hook.data.outcome = bazinga(playerPickOne, playerPickTwo)
+        hook.data.outcome = bazinga(playerPickOne, playerPickTwo)
       }
-
-      console.log(hook.data.outcome);
     })
   }
 };
