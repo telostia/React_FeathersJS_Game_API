@@ -1,6 +1,6 @@
 'use strict';
 
-const pickOutcome = require('./pickOutcome');
+const thisOutcome = require('./thisOutcome');
 
 const playerPick = require('./playerPick');
 
@@ -26,15 +26,8 @@ exports.before = {
   get: [],
   create: [createGame()],
 
-  update: [
-    joinGame(),
-    pickOutcome(),
-  ],
-  patch: [
-    joinGame(),
-    playerPick(),
-    pickOutcome(),
-  ],
+  update: [joinGame(), thisOutcome()],
+  patch: [joinGame(), playerPick(), thisOutcome()],
   remove: [],
 };
 

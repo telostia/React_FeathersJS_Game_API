@@ -15,6 +15,7 @@ const gameSchema = new Schema({
   playerIds: [Schema.Types.ObjectId],
   playerPickOne: { type: String, default: ''},
   playerPickTwo: { type: String, default: '' },
+  outcome: { type: String, default: ''},
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 });

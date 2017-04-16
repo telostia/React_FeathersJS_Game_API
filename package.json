@@ -1,5 +1,5 @@
 {
-  "name": "ShutUp",
+  "name": "bazinga",
   "description": "What&#39;s in a name?",
   "version": "0.0.0",
   "homepage": "",
@@ -9,9 +9,8 @@
   ],
   "license": "MIT",
   "repository": {},
-  "author": {},
+  "author": "",
   "contributors": [],
-  "bugs": {},
   "engines": {
     "node": ">= 0.12.0"
   },
@@ -42,5 +41,8 @@
     "jshint": "^2.9.4",
     "mocha": "^3.2.0",
     "request": "^2.81.0"
+  },
+  "directories": {
+    "test": "test"
   }
 }

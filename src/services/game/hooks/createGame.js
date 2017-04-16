@@ -16,5 +16,7 @@ module.exports = function(options) {
     hook.data.title = `${currentUser.name}'s Game`;
 
     hook.data.playerIds = [hook.params.user._id];
+
+    hook.data.outcome = 'Default value'
   };
 };
