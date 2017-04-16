@@ -17,23 +17,31 @@ const bazinga = function(playerPickOne, playerPickTwo) {
     while (difference > 2) {
       difference -= 2;
     }
-    console.log('\n ********** ' + (playerPickOne + result[difference] + playerPickTwo) + ' **********');
+    console.log(playerPickOne + result[difference] + playerPickTwo);
     return playerPickOne + result[difference] + playerPickTwo;
   }
+
 
 module.exports = function(options) {
   return function(hook) {
     return hook.app.service('games').get(hook.id)
     .then((game) => {
+
+
+
       let playerPickOne = game.playerPickOne,
       playerPickTwo = game.playerPickTwo;
+
+      // const newOutcome = bazinga(playerPickOne, playerPickTwo)
+      // console.log(bazinga(playerPickOne, playerPickTwo));
 
       if (game.playerPickOne == '' || game.playerPickTwo == '') return
 
       if (game.playerPickOne != '' && game.playerPickTwo != '') {
-        bazinga(playerPickOne, playerPickTwo)
-
+        // hook.data.outcome = bazinga(playerPickOne, playerPickTwo)
       }
+
+      console.log(hook.data.outcome);
     })
   }
 };
