@@ -1,10 +1,8 @@
-# ShutUp
+# Rock Paper Scissors Lizard Spock API
 
-> What&#39;s in a name?
 
 ## About
-
-This project uses [Feathers](http://feathersjs.com). An open source web framework for building modern real-time applications.
+We built this game API as part of an assignment for @codaisseur Academy. Stack: FeathersJS, MongoDB, JSON, JestTesting
 
 ## Getting Started
 
